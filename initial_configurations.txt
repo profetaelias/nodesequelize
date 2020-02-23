@@ -1,0 +1,28 @@
+yarn init -y
+yarn add express
+yarn add express pg pg-hstore sequelize
+yarn add sequelize-cli -D 
+yarn add nodemon -D
+
+#para ver principais comando do sequelize
+yarn sequelize -h
+
+#para startar use:
+yarn dev (observar os scripts no package.json) "dev": nodemon src/server.js
+
+#máquina docker para o postgres
+sudo docker run --name "postgres" -p 25432:5432 -d -t kartoza/postgis
+
+#criar o arquivo .sequelizerc e depois rodar o comando
+yarn sequelize db:create
+
+#para criar as migrations
+yarn sequelize migration:create --name=create-users
+
+#apos criar o arquivo de migrations
+yarn sequelize db:migrate
+
+#se precisar desfazer a última migrate 
+yarn sequelize db:migrate:undo
+
+
