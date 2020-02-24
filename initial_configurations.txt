@@ -25,4 +25,5 @@ yarn sequelize db:migrate
 #se precisar desfazer a última migrate 
 yarn sequelize db:migrate:undo
 
-
+#migration de enderecos
+yarn sequelize migration:create --name=create-addresses
